@@ -1,0 +1,18 @@
+sequenceDiagram
+    participant M as main.py
+    participant S as RelatorioCampanhasService
+    participant P as Playwright (voxi.example)
+    participant SMB as SMB 10.0.0.72
+
+    M->>S: executar()
+    S->>P: abrir navegador + garantir login
+    P-->>S: sessao autenticada
+    S->>P: goto /relatorios
+    S->>P: selecionar "Campanhas (Excel)"
+    S->>P: definir Data Inicio/Fim = D-1
+    S->>P: clicar "Exportar Excel"
+    P-->>S: download (arquivo .xlsx)
+    S->>SMB: register_session(user/senha)
+    S->>SMB: escrever arquivo (nome original)
+    SMB-->>S: gravado
+    S-->>M: fim (sucesso)

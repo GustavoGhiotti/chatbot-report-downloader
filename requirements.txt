@@ -1,0 +1,5 @@
+# RoboBulkChatBot — dependencias (versoes fixadas)
+playwright==1.57.0        # Automacao do navegador (login, selecao do relatorio, export)
+python-dotenv==1.0.1      # Carregar variaveis do .env
+smbprotocol==1.15.0       # Fornece o modulo `smbclient` p/ gravar no compartilhamento SMB de destino
+pyodbc>=5,<6              # Conexao ao SQL Server (LOGS_ROBOS) p/ carimbar/checar a transferencia do dia (padrao do grupo)

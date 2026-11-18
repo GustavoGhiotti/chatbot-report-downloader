@@ -1,0 +1,30 @@
+# Segredos
+.env
+
+# Sessao do navegador (cookies/tokens de login)
+src/infrastructure/voxi/session/
+*.storage.json
+
+# Downloads temporarios
+downloads/
+tmp/
+*.xlsx
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env.local
+
+# Logs
+src/infrastructure/logging/log/
+*.log
+*.log.*
+
+# IDE / SO
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

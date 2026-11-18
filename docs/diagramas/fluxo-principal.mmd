@@ -1,0 +1,13 @@
+flowchart TD
+    A[main.py] --> B[RelatorioCampanhasService.executar]
+    B --> C[anni_session: abrir navegador headless]
+    C --> D{Sessao salva valida?}
+    D -- Nao --> E[anni_login: preencher email + senha]
+    D -- Sim --> F[Ir para /relatorios]
+    E --> F[Ir para /relatorios]
+    F --> G[Scraper: selecionar 'Campanhas (Excel)']
+    G --> H[Scraper: Data Inicio = Data Fim = D-1]
+    H --> I[Scraper: clicar 'Exportar Excel' e capturar download]
+    I --> J[smb_destino: register_session no 10.0.0.72]
+    J --> K[Gravar arquivo .xlsx no destino SMB]
+    K --> L[Log de sucesso / encerrar navegador]
